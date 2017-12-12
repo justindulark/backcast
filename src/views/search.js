@@ -1,6 +1,12 @@
 var SearchView = Backbone.View.extend({
 
-  events: {'click button.btn': 'handleSearchClick'},
+  events: {'click button.btn': 'handleSearchClick',
+    'keyup': function(e) {
+      if (e.keyCode === 13) {
+        this.handleSearchClick();
+      }
+    }
+  },
 
   template: templateURL('src/templates/search.html'),
 
