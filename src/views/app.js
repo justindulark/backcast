@@ -3,7 +3,8 @@ var AppView = Backbone.View.extend({
   el: '#app',
 
   initialize: function() {
-    this.videos = new Videos(window.exampleVideoData);
+    this.videos = new Videos();
+    this.videos.search('aoa dance version');
     this.render();
     this.videos.on('rerender', this.render, this);
   },
